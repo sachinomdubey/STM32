@@ -1,0 +1,38 @@
+14:26:49 **** Incremental Build of configuration Debug for project accel_1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:106:19: warning: unsigned conversion from 'int' to 'uint8_t' {aka 'unsigned char'} changes value from '1000' to '232' [-Woverflow]
+  106 |   uint8_t count = 1000;
+      |                   ^~~~
+../Core/Src/main.c:104:11: warning: unused variable 'result' [-Wunused-variable]
+  104 |   uint8_t result;
+      |           ^~~~~~
+arm-none-eabi-gcc -o "accel_1.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sachin/STM32CubeIDE/workspace_1.8.0/accel_1/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="accel_1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: accel_1.elf
+ 
+arm-none-eabi-size   accel_1.elf 
+arm-none-eabi-objdump -h -S  accel_1.elf  > "accel_1.list"
+arm-none-eabi-objcopy  -O binary  accel_1.elf  "accel_1.bin"
+   text	   data	    bss	    dec	    hex	filename
+  13508	    120	   1752	  15380	   3c14	accel_1.elf
+Finished building: default.size.stdout
+ 
+Finished building: accel_1.bin
+ 
+Finished building: accel_1.list
+ 
+14:27:32 **** Incremental Build of configuration Debug for project accel_1 ****
+make -j12 all 
+arm-none-eabi-size   accel_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13508	    120	   1752	  15380	   3c14	accel_1.elf
+Finished building: default.size.stdout
+ 
+14:27:49 **** Incremental Build of configuration Debug for project accel_1 ****
+make -j12 all 
+arm-none-eabi-size   accel_1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13508	    120	   1752	  15380	   3c14	accel_1.elf
+Finished building: default.size.stdout
+ 
